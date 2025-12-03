@@ -52,9 +52,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         '.achievements-banner',
         '.cta-container',
         '.contact-card',
-        '.contact-actions',
-        '.stat-card',
-        '.hero-content'
+        '.contact-actions'
     ];
     const nodes = selectors.flatMap(sel => Array.from(document.querySelectorAll(sel)));
     nodes.forEach(n => n.classList.add('reveal'));
