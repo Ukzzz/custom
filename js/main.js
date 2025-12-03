@@ -6,7 +6,7 @@ window.addEventListener('scroll', function() {
     } else {
         navbar.classList.remove('scrolled');
     }
-});
+}, { passive: true });
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -42,6 +42,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 })();
 
+// Optimized Reveal Animation
 (function initReveal() {
     const selectors = [
         '.section-header',
@@ -50,28 +51,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         '.process-card',
         '.client-logo-card',
         '.achievements-banner',
-        '.cta-container',
-        '.contact-card',
-        '.contact-actions'
+        '.sample-card'
     ];
-    const nodes = selectors.flatMap(sel => Array.from(document.querySelectorAll(sel)));
+    
+    const nodes = [];
+    selectors.forEach(sel => {
+        document.querySelectorAll(sel).forEach(n => nodes.push(n));
+    });
+    
     nodes.forEach(n => n.classList.add('reveal'));
 
-    const io = new IntersectionObserver((entries, obs) => {
+    const io = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('in-view');
-                obs.unobserve(entry.target);
+                io.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
     nodes.forEach(n => io.observe(n));
 })();
 
-// Counter Animation
+// Counter Animation - Only for counters that exist
 (function initCounters() {
     const counters = document.querySelectorAll('.counter');
+    if (counters.length === 0) return;
     
     const animateCounter = (counter) => {
         const target = +counter.getAttribute('data-target');
