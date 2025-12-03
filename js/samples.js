@@ -9,7 +9,14 @@ const sampleImages = [
     'assets/sample-7.png',
     'assets/sample-8.png',
     'assets/sample-9.png',
-    'assets/sample-10.png'
+    'assets/sample-10.png',
+    'assets/sample-11.png',
+    'assets/sample-12.png',
+    'assets/sample-13.png',
+    'assets/sample-14.png',
+    'assets/sample-15.png',
+    'assets/sample-16.png',
+    'assets/sample-17.png'
 ];
 
 let currentImageIndex = 0;
