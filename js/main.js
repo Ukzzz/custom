@@ -1,11 +1,20 @@
-// Smooth scroll and navbar effect
-window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+// Debounced scroll handler for better performance
+let scrollTimeout;
+window.addEventListener('scroll', function () {
+    if (scrollTimeout) {
+        return;
     }
+    scrollTimeout = setTimeout(() => {
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+        scrollTimeout = null;
+    }, 10);
 }, { passive: true });
 
 // Smooth scrolling for anchor links
@@ -53,12 +62,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         '.achievements-banner',
         '.sample-card'
     ];
-    
+
     const nodes = [];
     selectors.forEach(sel => {
         document.querySelectorAll(sel).forEach(n => nodes.push(n));
     });
-    
+
     nodes.forEach(n => n.classList.add('reveal'));
 
     const io = new IntersectionObserver((entries) => {
@@ -77,13 +86,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 (function initCounters() {
     const counters = document.querySelectorAll('.counter');
     if (counters.length === 0) return;
-    
+
     const animateCounter = (counter) => {
         const target = +counter.getAttribute('data-target');
         const duration = 2000;
         const increment = target / (duration / 16);
         let current = 0;
-        
+
         const updateCounter = () => {
             current += increment;
             if (current < target) {
@@ -93,10 +102,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 counter.textContent = target;
             }
         };
-        
+
         updateCounter();
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -105,6 +114,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             }
         });
     }, { threshold: 0.5 });
-    
+
     counters.forEach(counter => observer.observe(counter));
 })();
