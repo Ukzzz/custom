@@ -17,6 +17,12 @@
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .sample-card {
+        margin-bottom: 15px;
+    }
+}
+
 .sample-card:hover {
     transform: translateY(-12px) scale(1.02);
     box-shadow: 
