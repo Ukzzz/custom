@@ -1398,9 +1398,7 @@ footer::after {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .samples-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+
 
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1494,8 +1492,7 @@ footer::after {
     .facility-grid,
     .capabilities-grid,
     .process-grid,
-    .clients-grid,
-    .samples-grid {
+    .clients-grid {
         grid-template-columns: 1fr;
         gap: 25px;
     }
