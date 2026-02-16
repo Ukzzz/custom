@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://kb-wear.com/sitemap.xml',
+    sitemap: 'https://www.kb-wear.com/sitemap.xml',
   }
 }

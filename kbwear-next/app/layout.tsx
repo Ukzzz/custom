@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     description:
       "Leading uniform manufacturer in Pakistan providing end-to-end solutions for custom corporate and industrial uniforms. Trusted by TOTAL PARCO and ZIC Petroleum.",
     siteName: "KBwear",
-    url: "https://kb-wear.com",
+    url: "https://www.kb-wear.com",
     images: [
       {
-        url: "https://kb-wear.com/assets/logo.png",
+        url: "https://www.kb-wear.com/assets/logo.png",
       },
     ],
   },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       "KBwear - Uniform Manufacturer in Pakistan | Custom Corporate & Industrial Uniforms",
     description:
       "Premier uniform manufacturer in Pakistan specializing in custom corporate, industrial, and workwear uniforms. Trusted partner for TOTAL PARCO and ZIC Petroleum.",
-    images: ["https://kb-wear.com/assets/logo.png"],
+    images: ["https://www.kb-wear.com/assets/logo.png"],
   },
   icons: {
     icon: [
