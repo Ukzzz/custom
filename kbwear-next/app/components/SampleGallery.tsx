@@ -248,9 +248,10 @@ export default function SampleGallery() {
               <Image
                 src={sample.src}
                 alt={sample.alt}
-                width={400} // Approximate width for grid
-                height={300} // Approximate height
-                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                width={400} // Base width for resolution
+                height={0} // Allow auto height
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
           </div>

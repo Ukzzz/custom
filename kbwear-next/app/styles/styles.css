@@ -797,9 +797,21 @@ section {
 }
 
 .samples-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    column-count: 3;
+    column-gap: 35px;
+    display: block;
+}
+
+@media (max-width: 1200px) {
+    .samples-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .samples-grid {
+        column-count: 1;
+    }
 }
 
 
