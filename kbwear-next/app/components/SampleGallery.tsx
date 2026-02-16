@@ -245,10 +245,13 @@ export default function SampleGallery() {
         {samples.map((sample, index) => (
           <div key={index} className="sample-card" onClick={() => openModal(index)}>
             <div className="sample-image">
-              <img
+              <Image
                 src={sample.src}
                 alt={sample.alt}
-                loading="lazy"
+                width={0}
+                height={0}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
           </div>
