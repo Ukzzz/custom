@@ -1551,9 +1551,7 @@ footer::after {
         font-size: 28px;
     }
 
-    .sample-image {
-        height: 220px;
-    }
+
 
     /* Ensure touch targets are at least 44px for mobile */
     .mobile-menu a {
