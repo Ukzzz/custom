@@ -249,8 +249,6 @@ export default function SampleGallery() {
                 src={sample.src}
                 alt={sample.alt}
                 loading="lazy"
-                width="400"
-                height="auto"
               />
             </div>
           </div>
