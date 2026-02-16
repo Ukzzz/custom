@@ -258,7 +258,7 @@ export default function SampleGallery() {
       </div>
 
       {modalOpen && (
-        <div id="imageModal" className="modal" style={{ display: "block" }} onClick={closeModal}>
+        <div id="imageModal" className="modal" style={{ display: "flex", alignItems: "center", justifyContent: "center" }} onClick={closeModal}>
           <span className="modal-close" onClick={closeModal}>&times;</span>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <Image
