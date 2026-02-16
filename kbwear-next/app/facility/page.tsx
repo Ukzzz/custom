@@ -34,7 +34,7 @@ const facilityItems = [
     alt: "Advanced stitching floor for corporate uniforms"
   },
   {
-    title: "Quality Control Laboratory",
+    title: "Quality Control ",
     description: "Multi-stage inspection systems ensuring every garment meets international quality standards for custom uniforms Pakistan.",
     image: "/assets/facility-quality.png",
     alt: "Quality control laboratory for uniforms"
