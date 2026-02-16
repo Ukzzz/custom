@@ -7,14 +7,11 @@
     overflow: hidden;
     position: relative;
     border: 1px solid rgba(89, 169, 106, 0.15);
-    box-shadow: 
-        0 4px 6px rgba(0, 0, 0, 0.04),
-        0 10px 20px rgba(0, 0, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
     will-change: transform, box-shadow;
     break-inside: avoid;
     margin-bottom: 35px;
     width: 100%;
+    display: inline-block;
 }
 
 @media (max-width: 768px) {
