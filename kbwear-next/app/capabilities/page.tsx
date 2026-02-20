@@ -1,4 +1,5 @@
 import RevealWrapper from "../components/RevealWrapper";
+import { ServiceJsonLd, BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,8 +9,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Capabilities - KBwear Custom Uniform Manufacturing Services",
     description: "Comprehensive uniform manufacturing capabilities from design to delivery in Pakistan.",
-    url: "https://kb-wear.com/capabilities.html",
-    images: [{ url: "https://kb-wear.com/assets/logo.png" }],
+    url: "https://www.kb-wear.com/capabilities",
+    images: [{ url: "https://www.kb-wear.com/assets/logo.png" }],
+  },
+  alternates: {
+    canonical: "https://www.kb-wear.com/capabilities",
   },
 };
 
@@ -49,6 +53,11 @@ const capabilities = [
 export default function Capabilities() {
   return (
     <main>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://www.kb-wear.com" },
+        { name: "Capabilities", url: "https://www.kb-wear.com/capabilities" },
+      ]} />
+      <ServiceJsonLd services={capabilities.map(c => ({ name: c.title, description: c.description }))} />
       <section id="capabilities" className="capabilities-section">
         <div className="capabilities-container">
           <div className="section-header">

@@ -1,4 +1,5 @@
 import RevealWrapper from "../components/RevealWrapper";
+import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,8 +9,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Uniform Manufacturing Process - KBwear Pakistan",
     description: "Step-by-step uniform manufacturing process from material sourcing to delivery.",
-    url: "https://kb-wear.com/process.html",
-    images: [{ url: "https://kb-wear.com/assets/logo.png" }],
+    url: "https://www.kb-wear.com/process",
+    images: [{ url: "https://www.kb-wear.com/assets/logo.png" }],
+  },
+  alternates: {
+    canonical: "https://www.kb-wear.com/process",
   },
 };
 
@@ -49,6 +53,10 @@ const processes = [
 export default function Process() {
   return (
     <main>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://www.kb-wear.com" },
+        { name: "Process", url: "https://www.kb-wear.com/process" },
+      ]} />
       <section id="process" className="process-section">
         <div className="process-container">
           <div className="section-header">

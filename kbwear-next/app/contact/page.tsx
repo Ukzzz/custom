@@ -1,5 +1,6 @@
 import RevealWrapper from "../components/RevealWrapper";
 import CountUp from "../components/CountUp";
+import { BreadcrumbJsonLd, FAQJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,14 +10,28 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact KBwear - Get Started | Free Quote in 24 Hours",
     description: "Contact KBwear for custom uniform manufacturing in Pakistan. 24-hour response time. Get your free quote today!",
-    url: "https://kb-wear.com/contact.html",
-    images: [{ url: "https://kb-wear.com/assets/logo.png" }],
+    url: "https://www.kb-wear.com/contact",
+    images: [{ url: "https://www.kb-wear.com/assets/logo.png" }],
+  },
+  alternates: {
+    canonical: "https://www.kb-wear.com/contact",
   },
 };
 
 export default function Contact() {
   return (
     <main>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://www.kb-wear.com" },
+        { name: "Contact", url: "https://www.kb-wear.com/contact" },
+      ]} />
+      <FAQJsonLd faqs={[
+        { question: "What types of uniforms does KBwear manufacture?", answer: "KBwear manufactures custom corporate uniforms, industrial workwear, safety uniforms, hospitality attire, and specialized petroleum industry uniforms for companies like TOTAL PARCO and ZIC Petroleum." },
+        { question: "What is the minimum order quantity for custom uniforms?", answer: "KBwear handles orders from small batches to large-scale enterprise requirements. Contact us for specific MOQ details based on your uniform type and customization needs." },
+        { question: "How long does it take to manufacture custom uniforms?", answer: "Production timelines vary based on order size and complexity. Our typical turnaround is 2-4 weeks for standard orders. We provide exact timelines after design approval." },
+        { question: "Does KBwear deliver uniforms nationwide in Pakistan?", answer: "Yes, KBwear provides nationwide delivery across Pakistan with reliable logistics and real-time tracking for all uniform orders." },
+        { question: "How can I get a quote for custom uniforms?", answer: "You can request a free quote by emailing info@kb-wear.com or calling +92 309 9431613. We respond within 24 hours with a detailed quotation." },
+      ]} />
       <section id="contact" className="contact-section">
         <div className="contact-background">
           <div className="contact-grid-pattern"></div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import RevealWrapper from "../components/RevealWrapper";
+import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,8 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Facility - KBwear Uniform Manufacturing Factory in Pakistan",
     description: "State-of-the-art uniform manufacturing facility in Lahore with cutting-edge technology.",
-    url: "https://kb-wear.com/facility.html",
-    images: [{ url: "https://kb-wear.com/assets/facility-stitching.png" }],
+    url: "https://www.kb-wear.com/facility",
+    images: [{ url: "https://www.kb-wear.com/assets/facility-stitching.png" }],
+  },
+  alternates: {
+    canonical: "https://www.kb-wear.com/facility",
   },
 };
 
@@ -56,6 +60,10 @@ const facilityItems = [
 export default function Facility() {
   return (
     <main>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://www.kb-wear.com" },
+        { name: "Facility", url: "https://www.kb-wear.com/facility" },
+      ]} />
       <section id="facility" className="facility-section">
         <div className="facility-container">
           <div className="section-header">

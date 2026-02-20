@@ -24,10 +24,10 @@ export default function Footer() {
           </div>
           <div className="footer-section">
             <h5>Services</h5>
-            <Link href="#">Custom Design</Link>
-            <Link href="#">Bulk Production</Link>
-            <Link href="#">Quality Control</Link>
-            <Link href="#">Logistics</Link>
+            <Link href="/capabilities">Custom Design</Link>
+            <Link href="/process">Bulk Production</Link>
+            <Link href="/facility">Quality Control</Link>
+            <Link href="/contact">Logistics & Delivery</Link>
           </div>
           <div className="footer-section">
             <h5>Connect With Us</h5>

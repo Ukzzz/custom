@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { OrganizationJsonLd } from "./components/JsonLd";
 import "./globals.css";
 import "./styles/styles.css";
 
@@ -18,6 +19,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.kb-wear.com'),
   title:
     "KBwear - Uniform Manufacturer in Pakistan | Custom Corporate & Industrial Uniforms",
   description:
@@ -62,8 +64,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en-PK" className={inter.variable}>
       <body suppressHydrationWarning>
+        <OrganizationJsonLd />
         <Header />
         {children}
         <Footer />

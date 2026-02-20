@@ -1,16 +1,20 @@
 import RevealWrapper from "../components/RevealWrapper";
 import CountUp from "../components/CountUp";
+import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Our Clients - KBwear | Trusted by TOTAL PARCO & ZIC Petroleum Pakistan",
-  description: "KBwear serves Pakistan's leading corporations including TOTAL PARCO and ZIC Petroleum. Over 10,000+ custom uniforms delivered with 100% quality assurance. Trusted uniform manufacturer.",
-  keywords: "KBwear clients, KB wear customers, TOTAL PARCO uniforms, ZIC Petroleum workwear, corporate uniform clients Pakistan, industrial uniform clients, oil company uniforms, petroleum industry workwear, trusted uniform manufacturer, 10000 uniforms delivered",
+  description: "KBwear serves Pakistan's leading corporations including TOTAL PARCO and ZIC Petroleum. Over 100,000+ custom uniforms delivered with 100% quality assurance. Trusted uniform manufacturer.",
+  keywords: "KBwear clients, KB wear customers, TOTAL PARCO uniforms, ZIC Petroleum workwear, corporate uniform clients Pakistan, industrial uniform clients, oil company uniforms, petroleum industry workwear, trusted uniform manufacturer, 100000 uniforms delivered",
   openGraph: {
     title: "Our Clients - KBwear | Trusted by TOTAL PARCO & ZIC Petroleum",
-    description: "KBwear serves Pakistan's leading corporations including TOTAL PARCO and ZIC Petroleum. Over 10,000+ uniforms delivered with 100% quality assurance.",
-    url: "https://kb-wear.com/clients.html",
-    images: [{ url: "https://kb-wear.com/assets/logo.png" }],
+    description: "KBwear serves Pakistan's leading corporations including TOTAL PARCO and ZIC Petroleum. Over 100,000+ uniforms delivered with 100% quality assurance.",
+    url: "https://www.kb-wear.com/clients",
+    images: [{ url: "https://www.kb-wear.com/assets/logo.png" }],
+  },
+  alternates: {
+    canonical: "https://www.kb-wear.com/clients",
   },
 };
 
@@ -32,6 +36,10 @@ const clients = [
 export default function Clients() {
   return (
     <main>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://www.kb-wear.com" },
+        { name: "Clients", url: "https://www.kb-wear.com/clients" },
+      ]} />
       <section id="clients" className="clients-section">
         <div className="clients-container">
           <div className="section-header">
@@ -54,7 +62,7 @@ export default function Clients() {
           <RevealWrapper className="achievements-banner">
             <h3>Production Excellence</h3>
             <div className="achievement-number">
-              <CountUp end={10000} suffix="+" />
+              <CountUp end={100000} suffix="+" />
             </div>
             <div className="achievement-label"> Uniforms Successfully Delivered in Pakistan</div>
           </RevealWrapper>

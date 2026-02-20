@@ -10,26 +10,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1.0,
       images: [
-        'https://kb-wear.com/assets/logo.png',
-        'https://kb-wear.com/assets/facility-raw.png',
-        'https://kb-wear.com/assets/facility-cutting.png',
-        'https://kb-wear.com/assets/facility-stitching.png',
-        'https://kb-wear.com/assets/facility-quality.png',
-        'https://kb-wear.com/assets/facility-finishing.png',
-        'https://kb-wear.com/assets/facility-distribution.png'
-      ]
+        `${BASE_URL}/assets/logo.png`,
+        `${BASE_URL}/assets/facility-raw.png`,
+        `${BASE_URL}/assets/facility-cutting.png`,
+        `${BASE_URL}/assets/facility-stitching.png`,
+        `${BASE_URL}/assets/facility-quality.png`,
+        `${BASE_URL}/assets/facility-finishing.png`,
+        `${BASE_URL}/assets/facility-distribution.png`,
+      ],
     },
     {
       url: `${BASE_URL}/facility`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
+      images: [
+        `${BASE_URL}/assets/facility-raw.png`,
+        `${BASE_URL}/assets/facility-cutting.png`,
+        `${BASE_URL}/assets/facility-stitching.png`,
+        `${BASE_URL}/assets/facility-quality.png`,
+        `${BASE_URL}/assets/facility-finishing.png`,
+        `${BASE_URL}/assets/facility-distribution.png`,
+      ],
     },
     {
       url: `${BASE_URL}/capabilities`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/process`,
@@ -41,19 +49,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/clients`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.7,
     },
     {
       url: `${BASE_URL}/contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/samples`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      images: Array.from({ length: 60 }, (_, i) => {
+        const num = i + 1;
+        // Skip 38 and 39 (files don't exist)
+        if (num === 38 || num === 39) return null;
+        return `${BASE_URL}/assets/sample-${num}.png`;
+      }).filter(Boolean) as string[],
     },
   ]
 }

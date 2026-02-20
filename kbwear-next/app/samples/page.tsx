@@ -1,5 +1,6 @@
 import SampleGallery from "../components/SampleGallery";
 import RevealWrapper from "../components/RevealWrapper";
+import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,14 +10,21 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Uniform Samples Gallery - KBwear | 50+ Custom Uniforms",
     description: "Browse 50+ professional uniform samples from KBwear, Pakistan's leading uniform manufacturer.",
-    url: "https://kb-wear.com/samples.html",
-    images: [{ url: "https://kb-wear.com/assets/sample-1.png" }],
+    url: "https://www.kb-wear.com/samples",
+    images: [{ url: "https://www.kb-wear.com/assets/sample-1.png" }],
+  },
+  alternates: {
+    canonical: "https://www.kb-wear.com/samples",
   },
 };
 
 export default function Samples() {
   return (
     <main>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://www.kb-wear.com" },
+        { name: "Samples", url: "https://www.kb-wear.com/samples" },
+      ]} />
       <section className="samples-section">
         <div className="samples-container">
           <div className="section-header">
