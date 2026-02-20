@@ -200,6 +200,42 @@ const samples = [
   {
     "src": "/assets/sample-51.png",
     "alt": "KBwear ZIC Petroleum style uniform - oil industry workwear Pakistan"
+  },
+  {
+    "src": "/assets/sample-52.png",
+    "alt": "KBwear custom industrial coverall - heavy duty workwear Pakistan"
+  },
+  {
+    "src": "/assets/sample-53.png",
+    "alt": "KB wear corporate blazer uniform - executive business attire Lahore"
+  },
+  {
+    "src": "/assets/sample-54.png",
+    "alt": "KBwear maintenance crew uniform - technical service workwear"
+  },
+  {
+    "src": "/assets/sample-55.png",
+    "alt": "KB-wear hospitality staff uniform - hotel service attire Pakistan"
+  },
+  {
+    "src": "/assets/sample-56.png",
+    "alt": "KBwear warehouse operations uniform - logistics workwear Lahore"
+  },
+  {
+    "src": "/assets/sample-57.png",
+    "alt": "KB wear factory floor uniform - manufacturing plant attire Pakistan"
+  },
+  {
+    "src": "/assets/sample-58.png",
+    "alt": "KBwear utility worker uniform - field service workwear"
+  },
+  {
+    "src": "/assets/sample-59.png",
+    "alt": "KB-wear professional chef uniform - kitchen staff attire Pakistan"
+  },
+  {
+    "src": "/assets/sample-60.png",
+    "alt": "KBwear security patrol uniform - guard service workwear Lahore"
   }
 ];
 
