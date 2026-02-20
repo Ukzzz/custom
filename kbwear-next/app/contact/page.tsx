@@ -102,7 +102,7 @@ export default function Contact() {
             <div className="stat-divider"></div>
             <div className="stat-item">
               <div className="stat-value">
-                <CountUp end={10000} suffix="+" className="counter" />
+                <CountUp end={100000} suffix="+" className="counter" />
               </div>
               <div className="stat-label">Uniforms Delivered </div>
             </div>
