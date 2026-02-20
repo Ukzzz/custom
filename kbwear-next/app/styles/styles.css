@@ -798,7 +798,7 @@ section {
 
 .samples-grid {
     column-count: 3;
-    column-gap: 35px;
+    column-gap: 20px;
 }
 
 @media (max-width: 1200px) {
@@ -810,13 +810,14 @@ section {
 @media (max-width: 768px) {
     .samples-grid {
         column-count: 2;
-        column-gap: 15px;
+        column-gap: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .samples-grid {
-        column-count: 1;
+        column-count: 2;
+        column-gap: 8px;
     }
 }
 

@@ -2,14 +2,14 @@
 .sample-card {
     cursor: pointer;
     background: linear-gradient(145deg, #ffffff 0%, #f8faf9 100%);
-    border-radius: 16px;
+    border-radius: 12px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
     position: relative;
     border: 1px solid rgba(89, 169, 106, 0.15);
     will-change: transform, box-shadow;
     break-inside: avoid;
-    margin-bottom: 35px;
+    margin-bottom: 10px;
     width: 100%;
     display: inline-block;
     vertical-align: top;
@@ -17,7 +17,7 @@
 
 @media (max-width: 768px) {
     .sample-card {
-        margin-bottom: 15px;
+        margin-bottom: 8px;
     }
 }
 
@@ -185,10 +185,6 @@
         transition: all 0.3s ease !important;
     }
 
-    .sample-image {
-        height: 280px;
-    }
-
     .sample-card:hover {
         transform: translateY(-8px) scale(1.01);
     }
@@ -201,9 +197,6 @@
 
 /* Medium Phones */
 @media (max-width: 768px) {
-    .sample-image {
-        height: 240px;
-    }
 
     .sample-card:hover {
         transform: translateY(-6px);
@@ -241,9 +234,6 @@
 
 /* Small Phones */
 @media (max-width: 480px) {
-    .sample-image {
-        height: 200px;
-    }
 
     .sample-card {
         border-radius: 12px !important;
@@ -288,9 +278,6 @@
 
 /* Extra Small Phones */
 @media (max-width: 360px) {
-    .sample-image {
-        height: 160px;
-    }
 
     .sample-image::after {
         font-size: 0.65rem;
