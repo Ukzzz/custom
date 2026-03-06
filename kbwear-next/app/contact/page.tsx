@@ -40,7 +40,7 @@ export default function Contact() {
 
     setIsSubmitting(true);
     try {
-      const res = await fetch("https://formsubmit.co/ajax/info@kb-wear.com", {
+      const res = await fetch("https://formsubmit.co/ajax/2bebc2069533b119d66289d5d8f70190", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
