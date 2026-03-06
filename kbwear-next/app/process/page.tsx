@@ -1,4 +1,5 @@
 import RevealWrapper from "../components/RevealWrapper";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
@@ -59,6 +60,7 @@ export default function Process() {
       ]} />
       <section id="process" className="process-section">
         <div className="process-container">
+          <Breadcrumbs items={[{ label: "Process" }]} />
           <div className="section-header">
             <RevealWrapper>
               <div className="section-label">Our Manufacturing Process</div>

@@ -1,5 +1,6 @@
 import RevealWrapper from "../components/RevealWrapper";
 import CountUp from "../components/CountUp";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
@@ -21,14 +22,17 @@ export const metadata: Metadata = {
 const clients = [
   {
     name: "TOTAL PARCO",
+    logo: "/assets/total.png",
     description: "Leading petroleum company trusted us for their complete uniform requirements with exceptional quality standards in Pakistan."
   },
   {
     name: "ZIC Petroleum",
+    logo: "/assets/zic.png",
     description: "Comprehensive uniform solutions meeting their stringent safety and branding specifications for industrial workwear."
   },
   {
-    name: "Major Corporations",
+    name: "FLOW Petroleum",
+    logo: "/assets/flow.png",
     description: "Serving various industry leaders across Pakistan with premium uniform manufacturing excellence."
   }
 ];
@@ -42,6 +46,7 @@ export default function Clients() {
       ]} />
       <section id="clients" className="clients-section">
         <div className="clients-container">
+          <Breadcrumbs items={[{ label: "Clients" }]} />
           <div className="section-header">
             <RevealWrapper>
               <div className="section-label" style={{ color: "var(--secondary)" }}>Trusted by Industry Leaders</div>
@@ -54,7 +59,13 @@ export default function Clients() {
           <div className="clients-grid">
             {clients.map((client, index) => (
               <RevealWrapper key={index} className="client-logo-card" delay={index * 100}>
-                <h3>{client.name}</h3>
+                {client.logo ? (
+                  <div className="client-logo-wrapper">
+                    <img src={client.logo} alt={client.name} className="client-logo-img" />
+                  </div>
+                ) : (
+                  <h3>{client.name}</h3>
+                )}
                 <p>{client.description}</p>
               </RevealWrapper>
             ))}

@@ -1002,6 +1002,30 @@ section {
     letter-spacing: -0.5px;
 }
 
+.client-logo-wrapper {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.client-logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.client-logo-card:hover .client-logo-wrapper {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
 .client-logo-card p {
     font-size: 16px;
     opacity: 0.9;
@@ -1726,4 +1750,813 @@ section {
         transform: none;
         transition: none;
     }
+}
+
+/* ======================================
+   Active Nav Indicator
+   ====================================== */
+nav ul a.active {
+    color: var(--secondary);
+}
+
+nav ul a.active::after {
+    width: 100%;
+}
+
+.mobile-menu a.active {
+    color: var(--secondary);
+    background: rgba(89, 169, 106, 0.08);
+    font-weight: 700;
+}
+
+/* ======================================
+   Dark Mode Toggle Button
+   ====================================== */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(16, 41, 66, 0.12);
+    background: rgba(16, 41, 66, 0.04);
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+    transform: rotate(15deg);
+}
+
+/* ======================================
+   Breadcrumbs
+   ====================================== */
+.breadcrumbs {
+    display: inline-flex;
+    padding: 8px 16px;
+    margin: 0 0 40px;
+    position: relative;
+    z-index: 2;
+    background: rgba(16, 41, 66, 0.04);
+    border: 1px solid rgba(16, 41, 66, 0.08);
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+    width: fit-content;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs li {
+    display: flex;
+    align-items: center;
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+.breadcrumbs a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs a:hover {
+    color: #7cc88c;
+}
+
+.breadcrumbs span[aria-current="page"] {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.breadcrumb-separator {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    opacity: 0.6;
+}
+
+/* Breadcrumbs override for always-dark sections like Clients and Contact */
+.clients-section .breadcrumbs,
+.contact-section .breadcrumbs {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.clients-section .breadcrumbs span[aria-current="page"],
+.contact-section .breadcrumbs span[aria-current="page"] {
+    color: #ffffff;
+}
+
+.clients-section .breadcrumb-separator,
+.contact-section .breadcrumb-separator {
+    color: #94a3b8;
+    opacity: 0.8;
+}
+
+/* ======================================
+   Contact Form
+   ====================================== */
+.contact-form-section {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 50px;
+    margin-bottom: 60px;
+}
+
+.contact-form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-form-header h3 {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.contact-form-header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group-full {
+    margin-bottom: 32px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.3px;
+}
+
+.required {
+    color: #f87171;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary);
+    background: rgba(89, 169, 106, 0.08);
+    box-shadow: 0 0 0 3px rgba(89, 169, 106, 0.15);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #f87171;
+    background: rgba(248, 113, 113, 0.06);
+}
+
+.form-group select {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+.form-group select option {
+    background: #1a2332;
+    color: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-error {
+    font-size: 13px;
+    color: #f87171;
+    font-weight: 500;
+}
+
+.form-alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.form-alert-success {
+    background: rgba(89, 169, 106, 0.15);
+    border: 1px solid rgba(89, 169, 106, 0.4);
+    color: #7cc88c;
+}
+
+.form-alert-error {
+    background: rgba(248, 113, 113, 0.15);
+    border: 1px solid rgba(248, 113, 113, 0.4);
+    color: #f87171;
+}
+
+.form-submit-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 17px;
+    padding: 18px 40px;
+}
+
+.form-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .contact-form-section {
+        padding: 30px 20px;
+    }
+
+    .contact-form-header h3 {
+        font-size: 24px;
+    }
+}
+
+/* ======================================
+   WhatsApp FAB
+   ====================================== */
+.whatsapp-fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25d366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.whatsapp-fab.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+}
+
+.whatsapp-fab:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-fab:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-fab {
+        bottom: 20px;
+        right: 20px;
+        width: 54px;
+        height: 54px;
+    }
+}
+
+/* ======================================
+   WhatsApp Icon in Contact Card
+   ====================================== */
+.whatsapp-icon-wrapper {
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.2), rgba(37, 211, 102, 0.1)) !important;
+    border-color: rgba(37, 211, 102, 0.3) !important;
+}
+
+.whatsapp-icon-wrapper svg {
+    color: #25d366 !important;
+}
+
+.info-card-modern:hover .whatsapp-icon-wrapper {
+    background: linear-gradient(135deg, #25d366, #128c4e) !important;
+}
+
+.info-card-modern:hover .whatsapp-icon-wrapper svg {
+    color: white !important;
+}
+
+/* ======================================
+   Quote CTA Section
+   ====================================== */
+.quote-cta-section {
+    padding: 0;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a3a52 50%, var(--primary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(89, 169, 106, 0.08), transparent 60%);
+    pointer-events: none;
+}
+
+.quote-cta-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px;
+}
+
+.quote-cta-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.quote-cta-icon {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--secondary), #7cc88c);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(89, 169, 106, 0.3);
+}
+
+.quote-cta-text {
+    flex: 1;
+}
+
+.quote-cta-text h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.quote-cta-text p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.quote-cta-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+@media (max-width: 968px) {
+    .quote-cta-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .quote-cta-container {
+        padding: 50px 30px;
+    }
+
+    .quote-cta-text h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .quote-cta-container {
+        padding: 40px 20px;
+    }
+
+    .quote-cta-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .quote-cta-text h2 {
+        font-size: 22px;
+    }
+
+    .quote-cta-text p {
+        font-size: 15px;
+    }
+}
+
+/* ======================================
+   Keyboard Focus Styles
+   ====================================== */
+:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+nav a:focus-visible,
+.nav-cta:focus-visible,
+.btn:focus-visible,
+.dark-mode-toggle:focus-visible,
+.mobile-menu-btn:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+.whatsapp-fab:focus-visible {
+    outline: 3px solid #25d366;
+    outline-offset: 4px;
+}
+
+/* ======================================
+   DARK MODE
+   ====================================== */
+html.dark {
+    --primary: #e2e8f0;
+    --secondary: #6ec87a;
+    --dark: #0f172a;
+    --light: #1e293b;
+    --text: #e2e8f0;
+    --text-light: #94a3b8;
+    --white: #0f172a;
+    color-scheme: dark;
+}
+
+/* Body & base */
+html.dark body {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* Scrollbar */
+html.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6ec87a, #4ade80);
+    border-color: #1e293b;
+}
+
+/* Selection */
+html.dark ::selection {
+    background: #6ec87a;
+    color: #0f172a;
+}
+
+/* Navigation */
+html.dark nav {
+    background: rgba(15, 23, 42, 0.98);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+html.dark nav.scrolled {
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(110, 200, 122, 0.05);
+}
+
+html.dark .logo-text {
+    color: #e2e8f0;
+}
+
+html.dark nav a {
+    color: #cbd5e1;
+}
+
+html.dark nav ul a:hover {
+    color: #6ec87a;
+}
+
+html.dark nav ul a.active {
+    color: #6ec87a;
+}
+
+html.dark .nav-cta {
+    background: #6ec87a;
+    color: #0f172a !important;
+}
+
+html.dark .nav-cta:hover {
+    background: #4ade80;
+}
+
+/* Dark mode toggle */
+html.dark .dark-mode-toggle {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    color: #e2e8f0;
+}
+
+html.dark .dark-mode-toggle:hover {
+    background: #6ec87a;
+    color: #0f172a;
+    border-color: #6ec87a;
+}
+
+/* Mobile menu */
+html.dark .mobile-menu {
+    background: #1e293b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .mobile-menu li {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .mobile-menu a {
+    color: #cbd5e1;
+}
+
+html.dark .mobile-menu a:hover {
+    background: rgba(110, 200, 122, 0.1);
+    color: #6ec87a;
+}
+
+html.dark .mobile-menu a.active {
+    color: #6ec87a;
+    background: rgba(110, 200, 122, 0.12);
+}
+
+html.dark .mobile-menu-btn {
+    color: #e2e8f0;
+}
+
+/* Hero */
+html.dark .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+html.dark .hero::before {
+    background: radial-gradient(circle, rgba(110, 200, 122, 0.06) 0%, transparent 70%);
+}
+
+html.dark .hero-content h1 {
+    color: #e2e8f0;
+}
+
+html.dark .hero-content p {
+    color: #94a3b8;
+}
+
+/* Stat cards */
+html.dark .stat-card {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .stat-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    border-color: rgba(110, 200, 122, 0.2);
+}
+
+html.dark .stat-number {
+    color: #e2e8f0;
+}
+
+html.dark .stat-icon {
+    color: #6ec87a;
+}
+
+/* Buttons */
+html.dark .btn-primary {
+    background: #59a96a; /* Secondary green color for primary buttons in dark mode */
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(89, 169, 106, 0.2);
+}
+
+html.dark .btn-primary:hover {
+    background: #6ec87a; /* Lighter green on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(89, 169, 106, 0.4);
+}
+
+html.dark .btn-secondary {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+html.dark .btn-secondary:hover {
+    background: #6ec87a;
+    color: #0f172a;
+    border-color: #6ec87a;
+}
+
+/* Quote CTA */
+html.dark .quote-cta-section {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
+}
+
+/* Sections */
+html.dark .section-label {
+    color: #6ec87a;
+    background: linear-gradient(135deg, rgba(110, 200, 122, 0.1), rgba(74, 222, 128, 0.1));
+    border-color: rgba(110, 200, 122, 0.2);
+}
+
+html.dark .section-title {
+    color: #e2e8f0;
+}
+
+html.dark .section-description {
+    color: #94a3b8;
+}
+
+/* Facility */
+html.dark .facility-section {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+}
+
+html.dark .facility-item {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+html.dark .facility-item:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border-color: rgba(110, 200, 122, 0.2);
+}
+
+html.dark .facility-content h3 {
+    color: #e2e8f0;
+}
+
+html.dark .facility-content p {
+    color: #94a3b8;
+}
+
+/* Capabilities */
+html.dark .capabilities-section {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
+}
+
+html.dark .capability-card {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+html.dark .capability-card:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .capability-card h3 {
+    color: #e2e8f0;
+}
+
+html.dark .capability-card p {
+    color: #94a3b8;
+}
+
+html.dark .capability-icon svg {
+    color: white;
+}
+
+/* Samples */
+html.dark .samples-section {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+}
+
+/* Process */
+html.dark .process-section {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+}
+
+html.dark .process-card {
+    background: #1e293b;
+}
+
+html.dark .process-card:hover {
+    background: #0f172a;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .process-card h4 {
+    color: #e2e8f0;
+}
+
+html.dark .process-card p {
+    color: #94a3b8;
+}
+
+/* Clients (dark base → darker in dark mode) */
+html.dark .clients-section {
+    background: #0f172a;
+}
+
+/* Contact section is already dark, minor tweaks */
+html.dark .contact-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+/* Footer already dark, minor tweaks */
+html.dark footer {
+    background: linear-gradient(135deg, #0f172a 0%, #0c1220 50%, #0f172a 100%);
+}
+
+/* Breadcrumbs dark mode */
+html.dark .breadcrumbs {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html.dark .breadcrumbs span[aria-current="page"] {
+    color: #ffffff;
+}
+
+html.dark .breadcrumb-separator {
+    color: #94a3b8;
+    opacity: 0.8;
+}
+
+/* Error page dark mode */
+html.dark .error-container {
+    background: #0f172a;
+}
+
+html.dark .error-content {
+    color: #e2e8f0;
+}
+
+html.dark .error-code {
+    color: #e2e8f0;
+}
+
+html.dark .error-title {
+    color: #e2e8f0;
+}
+
+html.dark .error-description {
+    color: #94a3b8;
+}
+
+html.dark .error-illustration svg {
+    color: #6ec87a;
+}
+
+/* Focus visible in dark mode */
+html.dark :focus-visible {
+    outline-color: #6ec87a;
 }

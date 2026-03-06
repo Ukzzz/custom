@@ -1,24 +1,77 @@
+"use client";
+
+import { useState, FormEvent } from "react";
 import RevealWrapper from "../components/RevealWrapper";
 import CountUp from "../components/CountUp";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { BreadcrumbJsonLd, FAQJsonLd } from "../components/JsonLd";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contact KBwear - Get Free Uniform Quote in 24 Hours | Pakistan",
-  description: "Contact KBwear for custom uniform manufacturing in Pakistan. Email info@kb-wear.com or call +92 309 9431613. 24-hour response time. Get your free quote today for corporate and industrial uniforms!",
-  keywords: "contact KBwear, KB wear contact, uniform quote Pakistan, get started uniforms, custom uniform inquiry, KBwear phone number, uniform manufacturer email, Lahore uniform contact, free uniform quote, bulk order inquiry",
-  openGraph: {
-    title: "Contact KBwear - Get Started | Free Quote in 24 Hours",
-    description: "Contact KBwear for custom uniform manufacturing in Pakistan. 24-hour response time. Get your free quote today!",
-    url: "https://www.kb-wear.com/contact",
-    images: [{ url: "https://www.kb-wear.com/assets/logo.png" }],
-  },
-  alternates: {
-    canonical: "https://www.kb-wear.com/contact",
-  },
-};
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    uniformType: "",
+    quantity: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim()) newErrors.name = "Full name is required";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+    if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/info@kb-wear.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          "uniform-type": formData.uniformType,
+          "quantity-range": formData.quantity,
+          message: formData.message,
+          _subject: `New Quote Request from ${formData.name}`,
+        }),
+      });
+      if (res.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", phone: "", company: "", uniformType: "", quantity: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }));
+  };
+
   return (
     <main>
       <BreadcrumbJsonLd items={[
@@ -40,12 +93,14 @@ export default function Contact() {
         </div>
 
         <div className="contact-container">
+          <Breadcrumbs items={[{ label: "Contact" }]} />
+
           <RevealWrapper className="contact-header">
             <h2 className="contact-title">
               Get In Touch With <span className="gradient-text">KBwear</span>
             </h2>
             <p className="contact-subtitle">
-              Pakistan's leading uniform manufacturer. Reach out through any of these channels.
+              Pakistan&apos;s leading uniform manufacturer. Reach out through any of these channels.
             </p>
           </RevealWrapper>
 
@@ -90,7 +145,165 @@ export default function Contact() {
               </a>
               <p className="info-description">Follow for updates</p>
             </RevealWrapper>
+
+            <RevealWrapper className="info-card-modern" delay={300}>
+              <div className="info-card-glow"></div>
+              <div className="info-icon-wrapper whatsapp-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/923099431613" target="_blank" rel="noopener noreferrer" className="info-link">
+                Chat With Us
+              </a>
+              <p className="info-description">Quick response via WhatsApp</p>
+            </RevealWrapper>
           </div>
+
+          {/* Contact Form */}
+          <RevealWrapper className="contact-form-section">
+            <div className="contact-form-header">
+              <h3>Request a Quote</h3>
+              <p>Fill out the form below and we&apos;ll get back to you within 24 hours</p>
+            </div>
+
+            {submitStatus === "success" && (
+              <div className="form-alert form-alert-success">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span>Your message has been sent successfully! We&apos;ll get back to you shortly.</span>
+              </div>
+            )}
+
+            {submitStatus === "error" && (
+              <div className="form-alert form-alert-error">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="15" y1="9" x2="9" y2="15" />
+                  <line x1="9" y1="9" x2="15" y2="15" />
+                </svg>
+                <span>Something went wrong. Please try again or contact us directly.</span>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="contact-form" noValidate>
+              <div className="form-grid">
+                <div className="form-group">
+                  <label htmlFor="name">Full Name <span className="required">*</span></label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={formData.name}
+                    onChange={(e) => handleChange("name", e.target.value)}
+                    placeholder="Your full name"
+                    className={errors.name ? "error" : ""}
+                  />
+                  {errors.name && <span className="form-error">{errors.name}</span>}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="email">Email Address <span className="required">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={formData.email}
+                    onChange={(e) => handleChange("email", e.target.value)}
+                    placeholder="you@company.com"
+                    className={errors.email ? "error" : ""}
+                  />
+                  {errors.email && <span className="form-error">{errors.email}</span>}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="phone">Phone Number <span className="required">*</span></label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={formData.phone}
+                    onChange={(e) => handleChange("phone", e.target.value)}
+                    placeholder="+92 xxx xxxxxxx"
+                    className={errors.phone ? "error" : ""}
+                  />
+                  {errors.phone && <span className="form-error">{errors.phone}</span>}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="company">Company Name</label>
+                  <input
+                    type="text"
+                    id="company"
+                    value={formData.company}
+                    onChange={(e) => handleChange("company", e.target.value)}
+                    placeholder="Your company"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="uniformType">Uniform Type</label>
+                  <select
+                    id="uniformType"
+                    value={formData.uniformType}
+                    onChange={(e) => handleChange("uniformType", e.target.value)}
+                  >
+                    <option value="">Select uniform type</option>
+                    <option value="corporate">Corporate Uniforms</option>
+                    <option value="industrial">Industrial Workwear</option>
+                    <option value="safety">Safety Uniforms</option>
+                    <option value="hospitality">Hospitality Attire</option>
+                    <option value="petroleum">Petroleum Industry</option>
+                    <option value="school">School Uniforms</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="quantity">Quantity Range</label>
+                  <select
+                    id="quantity"
+                    value={formData.quantity}
+                    onChange={(e) => handleChange("quantity", e.target.value)}
+                  >
+                    <option value="">Select quantity range</option>
+                    <option value="1-50">1 – 50 units</option>
+                    <option value="51-200">51 – 200 units</option>
+                    <option value="201-500">201 – 500 units</option>
+                    <option value="501-1000">501 – 1,000 units</option>
+                    <option value="1000+">1,000+ units</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-group form-group-full">
+                <label htmlFor="message">Message <span className="required">*</span></label>
+                <textarea
+                  id="message"
+                  rows={5}
+                  value={formData.message}
+                  onChange={(e) => handleChange("message", e.target.value)}
+                  placeholder="Tell us about your requirements..."
+                  className={errors.message ? "error" : ""}
+                />
+                {errors.message && <span className="form-error">{errors.message}</span>}
+              </div>
+
+              <button type="submit" className="btn btn-primary form-submit-btn" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <span>Sending...</span>
+                ) : (
+                  <>
+                    <span>Send Message</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <line x1="22" y1="2" x2="11" y2="13" />
+                      <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                  </>
+                )}
+              </button>
+            </form>
+          </RevealWrapper>
 
           <div className="contact-stats">
             <div className="stat-item">

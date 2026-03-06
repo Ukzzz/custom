@@ -1,5 +1,6 @@
 import Image from "next/image";
 import RevealWrapper from "../components/RevealWrapper";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
@@ -66,6 +67,7 @@ export default function Facility() {
       ]} />
       <section id="facility" className="facility-section">
         <div className="facility-container">
+          <Breadcrumbs items={[{ label: "Facility" }]} />
           <div className="section-header">
             <RevealWrapper>
               <div className="section-label">State-of-the-Art Infrastructure</div>

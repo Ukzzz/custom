@@ -33,7 +33,7 @@ const nextConfig: NextConfig = {
             // In production, Next.js strict CSP can be tricky with scripts. 
             // Using a slightly more permissive policy for now to ensure functionality, 
             // especially for Next.js internal scripts.
-            value: "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'",
+            value: "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co",
           },
           {
             key: 'Strict-Transport-Security',

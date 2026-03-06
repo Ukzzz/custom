@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import WhatsAppFAB from "./components/WhatsAppFAB";
 import { OrganizationJsonLd } from "./components/JsonLd";
 import "./globals.css";
 import "./styles/styles.css";
@@ -70,6 +71,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <WhatsAppFAB />
       </body>
     </html>
   );

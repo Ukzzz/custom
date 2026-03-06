@@ -1,5 +1,6 @@
 import SampleGallery from "../components/SampleGallery";
 import RevealWrapper from "../components/RevealWrapper";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
@@ -27,6 +28,7 @@ export default function Samples() {
       ]} />
       <section className="samples-section">
         <div className="samples-container">
+          <Breadcrumbs items={[{ label: "Samples" }]} />
           <div className="section-header">
             <RevealWrapper>
               <div className="section-label">Our Uniform Samples</div>
