@@ -232,7 +232,7 @@ export default function Contact() {
                 </svg>
               </div>
               <h4>WhatsApp</h4>
-              <a href="https://wa.me/923099431613" target="_blank" rel="noopener noreferrer" className="info-link">
+              <a href="https://wa.me/923254004551" target="_blank" rel="noopener noreferrer" className="info-link">
                 Chat With Us
               </a>
               <p className="info-description">Quick response via WhatsApp</p>

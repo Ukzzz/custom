@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="footer-section">
             <h5>Connect With Us</h5>
             <a href="mailto:info@kb-wear.com">info@kb-wear.com</a>
-            <a href="https://wa.me/923099431613" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/923254004551" target="_blank" rel="noopener noreferrer">
               WhatsApp
             </a>
             <a href="https://linkedin.com/company/kbwear" target="_blank" rel="noopener noreferrer">LinkedIn</a>
