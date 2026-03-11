@@ -40,91 +40,43 @@ export default function Contact() {
     if (!validate()) return;
 
     setIsSubmitting(true);
+    setSubmitStatus("idle");
+
     try {
-      const formElement = e.target as HTMLFormElement;
-      
-      // If there's a file, use traditional submission in a hidden iframe to avoid redirect
       if (selectedFile) {
-        // Create hidden iframe for form submission
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.name = 'formSubmitFrame';
-        document.body.appendChild(iframe);
-
-        // Set form target to iframe
-        formElement.target = 'formSubmitFrame';
-        formElement.action = 'https://formsubmit.co/info@kb-wear.com';
-        formElement.method = 'POST';
+        // FormSubmit AJAX doesn't support files, so we use a hidden iframe
+        const form = e.target as HTMLFormElement;
         
-        // Add hidden fields for all form data with correct names
-        const fieldMappings = {
-          name: 'name',
-          email: 'email', 
-          phone: 'phone',
-          company: 'company',
-          uniformType: 'uniform-type',
-          quantity: 'quantity-range',
-          message: 'message'
-        };
-
-        for (const [dataKey, formName] of Object.entries(fieldMappings)) {
-          let input = formElement.querySelector(`input[name="${formName}"]`) as HTMLInputElement;
-          if (!input) {
-            input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = formName;
-            formElement.appendChild(input);
-          }
-          input.value = formData[dataKey as keyof typeof formData];
+        // Create/get hidden iframe
+        let iframe = document.getElementById('formSubmitIframe') as HTMLIFrameElement;
+        if (!iframe) {
+          iframe = document.createElement('iframe');
+          iframe.id = 'formSubmitIframe';
+          iframe.name = 'formSubmitIframe';
+          iframe.style.display = 'none';
+          document.body.appendChild(iframe);
         }
 
-        let subjectInput = formElement.querySelector('input[name="_subject"]') as HTMLInputElement;
-        if (!subjectInput) {
-          subjectInput = document.createElement('input');
-          subjectInput.type = 'hidden';
-          subjectInput.name = '_subject';
-          formElement.appendChild(subjectInput);
-        }
-        subjectInput.value = `New Quote Request from ${formData.name}`;
+        // Configure form for traditional submission
+        form.target = 'formSubmitIframe';
+        form.action = 'https://formsubmit.co/info@kb-wear.com';
+        form.method = 'POST';
+        
+        // Submit traditionally
+        form.submit();
 
-        let templateInput = formElement.querySelector('input[name="_template"]') as HTMLInputElement;
-        if (!templateInput) {
-          templateInput = document.createElement('input');
-          templateInput.type = 'hidden';
-          templateInput.name = '_template';
-          formElement.appendChild(templateInput);
-        }
-        templateInput.value = 'table';
-
-        let captchaInput = formElement.querySelector('input[name="_captcha"]') as HTMLInputElement;
-        if (!captchaInput) {
-          captchaInput = document.createElement('input');
-          captchaInput.type = 'hidden';
-          captchaInput.name = '_captcha';
-          formElement.appendChild(captchaInput);
-        }
-        captchaInput.value = 'false';
-
-        // Submit the form
-        formElement.submit();
-
-        // Show success message after a delay
+        // Handle success (we assume success since we can't easily read iframe response due to CORS)
         setTimeout(() => {
           setSubmitStatus("success");
           setFormData({ name: "", email: "", phone: "", company: "", uniformType: "", quantity: "", message: "" });
           setSelectedFile(null);
-          
-          // Reset file input
           const fileInput = document.getElementById('designUpload') as HTMLInputElement;
           if (fileInput) fileInput.value = '';
-          
-          // Reset form target and clean up
-          formElement.target = '';
-          document.body.removeChild(iframe);
-        }, 1000);
-
+          form.target = ''; // Reset target
+          setIsSubmitting(false);
+        }, 2000);
       } else {
-        // Use AJAX for forms without files
+        // Use AJAX for messages without attachments
         const submitData = new FormData();
         submitData.append("name", formData.name);
         submitData.append("email", formData.email);
@@ -146,13 +98,15 @@ export default function Contact() {
           setSubmitStatus("success");
           setFormData({ name: "", email: "", phone: "", company: "", uniformType: "", quantity: "", message: "" });
           setSelectedFile(null);
+          const fileInput = document.getElementById('designUpload') as HTMLInputElement;
+          if (fileInput) fileInput.value = '';
         } else {
           setSubmitStatus("error");
         }
+        setIsSubmitting(false);
       }
     } catch {
       setSubmitStatus("error");
-    } finally {
       setIsSubmitting(false);
     }
   };
@@ -268,12 +222,18 @@ export default function Contact() {
             )}
 
             <form onSubmit={handleSubmit} className="contact-form" encType="multipart/form-data" noValidate>
+              {/* FormSubmit Configuration */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_subject" value={`New Quote Request from ${formData.name}`} />
+              
               <div className="form-grid">
                 <div className="form-group">
                   <label htmlFor="name">Full Name <span className="required">*</span></label>
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     value={formData.name}
                     onChange={(e) => handleChange("name", e.target.value)}
                     placeholder="Your full name"
@@ -287,6 +247,7 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     value={formData.email}
                     onChange={(e) => handleChange("email", e.target.value)}
                     placeholder="you@company.com"
@@ -300,6 +261,7 @@ export default function Contact() {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
                     value={formData.phone}
                     onChange={(e) => handleChange("phone", e.target.value)}
                     placeholder="+92 xxx xxxxxxx"
@@ -313,6 +275,7 @@ export default function Contact() {
                   <input
                     type="text"
                     id="company"
+                    name="company"
                     value={formData.company}
                     onChange={(e) => handleChange("company", e.target.value)}
                     placeholder="Your company"
@@ -323,6 +286,7 @@ export default function Contact() {
                   <label htmlFor="uniformType">Uniform Type</label>
                   <select
                     id="uniformType"
+                    name="uniform-type"
                     value={formData.uniformType}
                     onChange={(e) => handleChange("uniformType", e.target.value)}
                   >
@@ -341,6 +305,7 @@ export default function Contact() {
                   <label htmlFor="quantity">Quantity Range</label>
                   <select
                     id="quantity"
+                    name="quantity-range"
                     value={formData.quantity}
                     onChange={(e) => handleChange("quantity", e.target.value)}
                   >
@@ -384,6 +349,7 @@ export default function Contact() {
                 <label htmlFor="message">Message <span className="required">*</span></label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
                   value={formData.message}
                   onChange={(e) => handleChange("message", e.target.value)}
