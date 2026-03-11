@@ -137,7 +137,7 @@ export default function Contact() {
         submitData.append("_template", "table");
         submitData.append("_captcha", "false");
 
-        const res = await fetch("https://formsubmit.co/ajax/2bebc2069533b119d66289d5d8f70190", {
+        const res = await fetch("https://formsubmit.co/ajax/info@kb-wear.com", {
           method: "POST",
           body: submitData,
         });
