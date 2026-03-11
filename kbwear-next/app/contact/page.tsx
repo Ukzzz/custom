@@ -59,7 +59,7 @@ export default function Contact() {
 
         // Configure form for traditional submission
         form.target = 'formSubmitIframe';
-        form.action = 'https://formsubmit.co/info@kb-wear.com';
+        form.action = 'https://formsubmit.co/2bebc2069533b119d66289d5d8f70190';
         form.method = 'POST';
         
         // Submit traditionally
@@ -89,7 +89,7 @@ export default function Contact() {
         submitData.append("_template", "table");
         submitData.append("_captcha", "false");
 
-        const res = await fetch("https://formsubmit.co/ajax/info@kb-wear.com", {
+        const res = await fetch("https://formsubmit.co/ajax/2bebc2069533b119d66289d5d8f70190", {
           method: "POST",
           body: submitData,
         });
