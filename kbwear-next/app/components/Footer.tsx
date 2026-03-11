@@ -32,7 +32,6 @@ export default function Footer() {
           <div className="footer-section">
             <h5>Connect With Us</h5>
             <a href="mailto:info@kb-wear.com">info@kb-wear.com</a>
-            <a href="tel:+923099431613">+92 309 9431613</a>
             <a href="https://wa.me/923099431613" target="_blank" rel="noopener noreferrer">
               WhatsApp
             </a>

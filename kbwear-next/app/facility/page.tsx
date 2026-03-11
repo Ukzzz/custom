@@ -22,18 +22,18 @@ export const metadata: Metadata = {
 const facilityItems = [
   {
     title: "Raw Material Storage",
-    description: "Controlled warehouses maintaining premium fabric quality with advanced inventory management systems for uniform production in Pakistan.",
+    description: "Warehouses maintaining premium fabric quality with inventory management systems for uniform production in Pakistan.",
     image: "/assets/facility-raw.png",
     alt: "Raw material storage for uniform manufacturing"
   },
   {
-    title: "Precision Cutting Department",
+    title: "Cutting Department",
     description: "CAD-integrated automated cutting machines ensuring zero waste and perfect pattern accuracy for industrial uniforms.",
     image: "/assets/facility-cutting.png",
     alt: "Precision cutting department for custom uniforms"
   },
   {
-    title: "Advanced Stitching Floor",
+    title: "Stitching Floor",
     description: "Industrial-grade sewing stations operated by master craftsmen with decades of expertise in uniform stitching services.",
     image: "/assets/facility-stitching.png",
     alt: "Advanced stitching floor for corporate uniforms"
@@ -45,13 +45,13 @@ const facilityItems = [
     alt: "Quality control laboratory for uniforms"
   },
   {
-    title: "Finishing & Pressing",
+    title: "Finishing",
     description: "Professional finishing equipment delivering crisp, presentation-ready uniforms for corporate clients.",
     image: "/assets/facility-finishing.png",
     alt: "Finishing and pressing station"
   },
   {
-    title: "Packaging & Distribution",
+    title: "Distribution",
     description: "Modern packaging facilities with custom branding and efficient logistics coordination nationwide in Pakistan.",
     image: "/assets/facility-distribution.png",
     alt: "Packaging and distribution for uniform manufacturer"
