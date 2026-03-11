@@ -919,30 +919,36 @@ section {
 
 /* Clients Section */
 .clients-section {
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
     color: white;
     position: relative;
     overflow: hidden;
+    padding: 140px 60px;
 }
 
 .clients-section::before {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -30%;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(89, 169, 106, 0.15), transparent 60%);
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(89, 169, 106, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(124, 200, 140, 0.1) 0%, transparent 40%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .clients-section::after {
     content: '';
     position: absolute;
-    bottom: -30%;
-    left: -20%;
-    width: 80%;
-    height: 150%;
-    background: radial-gradient(circle, rgba(124, 200, 140, 0.1), transparent 60%);
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .clients-container {
@@ -954,123 +960,151 @@ section {
 
 .clients-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-bottom: 80px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
 }
 
 .client-logo-card {
-    background: rgba(255, 255, 255, 0.10);
-    padding: 60px 40px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 50px 40px;
     border-radius: 24px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     position: relative;
     overflow: hidden;
-    transform: translateZ(0);
-    /* Hardware acceleration */
-    will-change: transform;
-}
-
-.client-logo-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-    transition: left 0.5s ease;
-}
-
-.client-logo-card:hover::before {
-    left: 100%;
-}
-
-.client-logo-card:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-8px) translateZ(0);
-    border-color: var(--secondary);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .client-logo-card h3 {
-    font-size: 36px;
-    font-weight: 900;
+    font-size: 32px;
+    font-weight: 800;
     margin-bottom: 20px;
     letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .client-logo-wrapper {
-    height: 90px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 24px;
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    margin-bottom: 30px;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
 }
+
+/* Subtle glow behind the logo instead of a harsh white box */
+.client-logo-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+    z-index: -1;
+    border-radius: 50%;
+}
+
 
 .client-logo-img {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
-}
-
-.client-logo-card:hover .client-logo-wrapper {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    /* Adding a subtle glow to the logos themselves to help them stand out on the dark background */
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.2)) brightness(1.2);
 }
 
 .client-logo-card p {
     font-size: 16px;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.7);
     line-height: 1.7;
+    margin: 0;
 }
 
 .achievements-banner {
-    background: rgba(0, 0, 0, 0.25);
-    padding: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 60px 40px;
     border-radius: 24px;
     text-align: center;
-    border: 2px solid rgba(89, 169, 106, 0.4);
+    border: 1px solid rgba(89, 169, 106, 0.3);
     position: relative;
     overflow: hidden;
-    transform: translateZ(0);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .achievements-banner::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(89, 169, 106, 0.08), rgba(124, 200, 140, 0.08));
-    z-index: -1;
+    background: radial-gradient(circle at center, rgba(89, 169, 106, 0.15) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .achievements-banner h3 {
-    font-size: 24px;
-    margin-bottom: 30px;
+    font-size: 22px;
+    margin-bottom: 20px;
     color: var(--secondary);
     font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .achievement-number {
     font-size: 80px;
     font-weight: 900;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     line-height: 1;
-    text-shadow: 0 4px 30px rgba(89, 169, 106, 0.5);
+    background: linear-gradient(135deg, #ffffff 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 20px rgba(89, 169, 106, 0.4));
 }
 
 .achievement-label {
     font-size: 20px;
-    opacity: 0.95;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments for clients section */
+@media (max-width: 1024px) {
+    .clients-section {
+        padding: 100px 40px;
+    }
+    
+    .clients-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .clients-section {
+        padding: 80px 20px;
+    }
+    
+    .client-logo-card {
+        padding: 40px 30px;
+    }
+    
+    .achievement-number {
+        font-size: 60px;
+    }
 }
 
 /* Futuristic Contact Section */

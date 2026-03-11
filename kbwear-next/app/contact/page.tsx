@@ -16,6 +16,7 @@ export default function Contact() {
     quantity: "",
     message: "",
   });
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -40,25 +41,114 @@ export default function Contact() {
 
     setIsSubmitting(true);
     try {
-      const res = await fetch("https://formsubmit.co/ajax/2bebc2069533b119d66289d5d8f70190", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          "uniform-type": formData.uniformType,
-          "quantity-range": formData.quantity,
-          message: formData.message,
-          _subject: `New Quote Request from ${formData.name}`,
-        }),
-      });
-      if (res.ok) {
-        setSubmitStatus("success");
-        setFormData({ name: "", email: "", phone: "", company: "", uniformType: "", quantity: "", message: "" });
+      const formElement = e.target as HTMLFormElement;
+      
+      // If there's a file, use traditional submission in a hidden iframe to avoid redirect
+      if (selectedFile) {
+        // Create hidden iframe for form submission
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.name = 'formSubmitFrame';
+        document.body.appendChild(iframe);
+
+        // Set form target to iframe
+        formElement.target = 'formSubmitFrame';
+        formElement.action = 'https://formsubmit.co/info@kb-wear.com';
+        formElement.method = 'POST';
+        
+        // Add hidden fields for all form data with correct names
+        const fieldMappings = {
+          name: 'name',
+          email: 'email', 
+          phone: 'phone',
+          company: 'company',
+          uniformType: 'uniform-type',
+          quantity: 'quantity-range',
+          message: 'message'
+        };
+
+        for (const [dataKey, formName] of Object.entries(fieldMappings)) {
+          let input = formElement.querySelector(`input[name="${formName}"]`) as HTMLInputElement;
+          if (!input) {
+            input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = formName;
+            formElement.appendChild(input);
+          }
+          input.value = formData[dataKey as keyof typeof formData];
+        }
+
+        let subjectInput = formElement.querySelector('input[name="_subject"]') as HTMLInputElement;
+        if (!subjectInput) {
+          subjectInput = document.createElement('input');
+          subjectInput.type = 'hidden';
+          subjectInput.name = '_subject';
+          formElement.appendChild(subjectInput);
+        }
+        subjectInput.value = `New Quote Request from ${formData.name}`;
+
+        let templateInput = formElement.querySelector('input[name="_template"]') as HTMLInputElement;
+        if (!templateInput) {
+          templateInput = document.createElement('input');
+          templateInput.type = 'hidden';
+          templateInput.name = '_template';
+          formElement.appendChild(templateInput);
+        }
+        templateInput.value = 'table';
+
+        let captchaInput = formElement.querySelector('input[name="_captcha"]') as HTMLInputElement;
+        if (!captchaInput) {
+          captchaInput = document.createElement('input');
+          captchaInput.type = 'hidden';
+          captchaInput.name = '_captcha';
+          formElement.appendChild(captchaInput);
+        }
+        captchaInput.value = 'false';
+
+        // Submit the form
+        formElement.submit();
+
+        // Show success message after a delay
+        setTimeout(() => {
+          setSubmitStatus("success");
+          setFormData({ name: "", email: "", phone: "", company: "", uniformType: "", quantity: "", message: "" });
+          setSelectedFile(null);
+          
+          // Reset file input
+          const fileInput = document.getElementById('designUpload') as HTMLInputElement;
+          if (fileInput) fileInput.value = '';
+          
+          // Reset form target and clean up
+          formElement.target = '';
+          document.body.removeChild(iframe);
+        }, 1000);
+
       } else {
-        setSubmitStatus("error");
+        // Use AJAX for forms without files
+        const submitData = new FormData();
+        submitData.append("name", formData.name);
+        submitData.append("email", formData.email);
+        submitData.append("phone", formData.phone);
+        submitData.append("company", formData.company);
+        submitData.append("uniform-type", formData.uniformType);
+        submitData.append("quantity-range", formData.quantity);
+        submitData.append("message", formData.message);
+        submitData.append("_subject", `New Quote Request from ${formData.name}`);
+        submitData.append("_template", "table");
+        submitData.append("_captcha", "false");
+
+        const res = await fetch("https://formsubmit.co/ajax/2bebc2069533b119d66289d5d8f70190", {
+          method: "POST",
+          body: submitData,
+        });
+        
+        if (res.ok) {
+          setSubmitStatus("success");
+          setFormData({ name: "", email: "", phone: "", company: "", uniformType: "", quantity: "", message: "" });
+          setSelectedFile(null);
+        } else {
+          setSubmitStatus("error");
+        }
       }
     } catch {
       setSubmitStatus("error");
@@ -117,19 +207,7 @@ export default function Contact() {
               <a href="mailto:info@kb-wear.com" className="info-link">info@kb-wear.com</a>
               <p className="info-description">Get a response within 24 hours</p>
             </RevealWrapper>
-
-            <RevealWrapper className="info-card-modern" delay={100}>
-              <div className="info-card-glow"></div>
-              <div className="info-icon-wrapper">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-              </div>
-              <h4>Call Us</h4>
-              <a href="tel:+923099431613" className="info-link">+92 309 9431613</a>
-              <p className="info-description">Mon-Sat, 9AM - 6PM PKT</p>
-            </RevealWrapper>
-
+            
             <RevealWrapper className="info-card-modern" delay={200}>
               <div className="info-card-glow"></div>
               <div className="info-icon-wrapper">
@@ -189,7 +267,7 @@ export default function Contact() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="contact-form" noValidate>
+            <form onSubmit={handleSubmit} className="contact-form" encType="multipart/form-data" noValidate>
               <div className="form-grid">
                 <div className="form-group">
                   <label htmlFor="name">Full Name <span className="required">*</span></label>
@@ -274,6 +352,32 @@ export default function Contact() {
                     <option value="1000+">1,000+ units</option>
                   </select>
                 </div>
+              </div>
+
+              <div className="form-group form-group-full">
+                <label htmlFor="designUpload">Design Upload (Picture/Logo)</label>
+                <input
+                  type="file"
+                  id="designUpload"
+                  name="attachment"
+                  accept="image/*"
+                  onChange={(e) => {
+                    if (e.target.files && e.target.files.length > 0) {
+                      setSelectedFile(e.target.files[0]);
+                    }
+                  }}
+                  className="file-input"
+                  style={{
+                    width: '100%',
+                    padding: '12px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    borderRadius: '8px',
+                    color: '#fff',
+                    marginTop: '8px',
+                    cursor: 'pointer'
+                  }}
+                />
               </div>
 
               <div className="form-group form-group-full">

@@ -47,18 +47,22 @@ export default function Clients() {
       <section id="clients" className="clients-section">
         <div className="clients-container">
           <Breadcrumbs items={[{ label: "Clients" }]} />
+          
           <div className="section-header">
             <RevealWrapper>
-              <div className="section-label" style={{ color: "var(--secondary)" }}>Trusted by Industry Leaders</div>
-              <h2 className="section-title" style={{ color: "white" }}>Our Prestigious Clients in Pakistan</h2>
+              <div style={{ display: "block", marginBottom: "20px" }}>
+                <div className="section-label" style={{ color: "var(--secondary)", margin: 0 }}>Our Trusted Partners</div>
+              </div>
+              <h2 className="section-title" style={{ color: "white", display: "inline-block" }}>Prestigious Clients</h2>
               <p className="section-description" style={{ color: "rgba(255,255,255,0.8)" }}>
-                Delivering excellence in uniform manufacturing to Pakistan's leading corporations like TOTAL PARCO and ZIC Petroleum.
+                Delivering excellence in uniform manufacturing to Pakistan's leading corporations. We take pride in our long-standing relationships with industry giants.
               </p>
             </RevealWrapper>
           </div>
+
           <div className="clients-grid">
             {clients.map((client, index) => (
-              <RevealWrapper key={index} className="client-logo-card" delay={index * 100}>
+              <RevealWrapper key={index} className="client-logo-card" delay={index * 150}>
                 {client.logo ? (
                   <div className="client-logo-wrapper">
                     <img src={client.logo} alt={client.name} className="client-logo-img" />
@@ -70,13 +74,15 @@ export default function Clients() {
               </RevealWrapper>
             ))}
           </div>
-          <RevealWrapper className="achievements-banner">
+
+          <RevealWrapper className="achievements-banner" delay={500}>
             <h3>Production Excellence</h3>
             <div className="achievement-number">
               <CountUp end={100000} suffix="+" />
             </div>
-            <div className="achievement-label"> Uniforms Successfully Delivered in Pakistan</div>
+            <div className="achievement-label">Uniforms Successfully Delivered Across Pakistan</div>
           </RevealWrapper>
+
         </div>
       </section>
     </main>
