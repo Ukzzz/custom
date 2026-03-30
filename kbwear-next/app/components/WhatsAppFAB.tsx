@@ -16,7 +16,7 @@ export default function WhatsAppFAB() {
 
   return (
     <a
-      href="https://wa.me/923099431613"
+      href="https://wa.me/923254004551"
       target="_blank"
       rel="noopener noreferrer"
       className={`whatsapp-fab ${isVisible ? "visible" : ""}`}

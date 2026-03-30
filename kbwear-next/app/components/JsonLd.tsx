@@ -24,7 +24,7 @@ export function OrganizationJsonLd() {
       "Leading uniform manufacturer in Pakistan providing custom corporate, industrial, and workwear uniforms. Trusted by TOTAL PARCO & ZIC Petroleum.",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+92-309-9431613",
+      telephone: "+92-325-4004551",
       contactType: "sales",
       email: "info@kb-wear.com",
       areaServed: "PK",
@@ -52,7 +52,7 @@ export function LocalBusinessJsonLd() {
     name: "KBwear - Uniform Manufacturer Pakistan",
     image: "https://www.kb-wear.com/assets/logo.png",
     url: "https://www.kb-wear.com",
-    telephone: "+92-309-9431613",
+    telephone: "+92-325-4004551",
     email: "info@kb-wear.com",
     address: {
       "@type": "PostalAddress",

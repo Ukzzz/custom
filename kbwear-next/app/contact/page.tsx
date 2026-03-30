@@ -127,7 +127,7 @@ export default function Contact() {
         { question: "What is the minimum order quantity for custom uniforms?", answer: "KBwear handles orders from small batches to large-scale enterprise requirements. Contact us for specific MOQ details based on your uniform type and customization needs." },
         { question: "How long does it take to manufacture custom uniforms?", answer: "Production timelines vary based on order size and complexity. Our typical turnaround is 2-4 weeks for standard orders. We provide exact timelines after design approval." },
         { question: "Does KBwear deliver uniforms nationwide in Pakistan?", answer: "Yes, KBwear provides nationwide delivery across Pakistan with reliable logistics and real-time tracking for all uniform orders." },
-        { question: "How can I get a quote for custom uniforms?", answer: "You can request a free quote by emailing info@kb-wear.com or calling +92 309 9431613. We respond within 24 hours with a detailed quotation." },
+        { question: "How can I get a quote for custom uniforms?", answer: "You can request a free quote by emailing info@kb-wear.com or calling +92 325 4004551. We respond within 24 hours with a detailed quotation." },
       ]} />
       <section id="contact" className="contact-section">
         <div className="contact-background">
