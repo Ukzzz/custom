@@ -140,9 +140,9 @@ export default function Contact() {
           <Breadcrumbs items={[{ label: "Contact" }]} />
 
           <RevealWrapper className="contact-header">
-            <h2 className="contact-title">
+            <h1 className="contact-title">
               Get In Touch With <span className="gradient-text">KBwear</span>
-            </h2>
+            </h1>
             <p className="contact-subtitle">
               Pakistan&apos;s leading uniform manufacturer. Reach out through any of these channels.
             </p>

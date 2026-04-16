@@ -4,7 +4,7 @@ import { LocalBusinessJsonLd, WebSiteJsonLd } from "./components/JsonLd";
 
 export const metadata: Metadata = {
   title:
-    "KBwear - Uniform Manufacturer in Pakistan | Custom Corporate & Industrial Uniforms",
+    "KBwear | #1 Uniform Manufacturer in Lahore, Pakistan",
   description:
     "KBwear: Leading uniform manufacturer in Pakistan offering custom corporate, industrial, and workwear uniforms. Trusted by TOTAL PARCO & ZIC Petroleum for end-to-end production. Get a free quote today!",
   keywords:
@@ -120,6 +120,179 @@ export default function Home() {
                 <div className="stat-number">24/7</div>
                 <div className="stat-label">Production Capacity</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose KBwear */}
+      <section className="why-choose-section">
+        <div className="why-choose-container">
+          <div className="section-header">
+            <div className="section-label">Why KBwear</div>
+            <h2 className="section-title">Why Leading Corporations Choose KBwear</h2>
+            <p className="section-description">
+              As Pakistan&apos;s trusted uniform manufacturer based in Lahore, we combine decades of garment manufacturing expertise with modern production technology to deliver uniforms that represent your brand with excellence.
+            </p>
+          </div>
+          <div className="why-choose-grid">
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3>ISO-Certified Quality</h3>
+              <p>Every uniform undergoes multi-stage quality inspection. We maintain ISO-compliant standards across our entire production line in Lahore, ensuring zero-defect delivery to clients like TOTAL PARCO and ZIC Petroleum.</p>
+            </div>
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <h3>Fast Turnaround</h3>
+              <p>Our Lahore factory operates at full capacity with 24/7 production capability. Standard orders are completed in 2-4 weeks, with rush options available for urgent corporate uniform requirements across Pakistan.</p>
+            </div>
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23" />
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              </div>
+              <h3>Competitive Pricing</h3>
+              <p>Direct partnerships with certified fabric mills allow us to offer factory-direct pricing without compromising quality. From small batches of 50 to enterprise orders of 10,000+, we scale to your budget.</p>
+            </div>
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="1" y="3" width="15" height="13" rx="2" ry="2" />
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+              </div>
+              <h3>Nationwide Delivery</h3>
+              <p>Reliable supply chain management with real-time tracking covering all of Pakistan. Whether you&apos;re in Karachi, Islamabad, or Peshawar, your uniforms arrive on time, every time.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="industries-section">
+        <div className="industries-container">
+          <div className="section-header">
+            <div className="section-label">Industries We Serve</div>
+            <h2 className="section-title">Custom Uniforms for Every Industry in Pakistan</h2>
+            <p className="section-description">
+              From petroleum companies to hospitality chains, KBwear manufactures specialized uniforms tailored to the unique requirements of each industry sector.
+            </p>
+          </div>
+          <div className="industries-grid">
+            <Link href="/uniforms/corporate-uniforms" className="industry-card">
+              <div className="industry-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </div>
+              <h3>Corporate Uniforms</h3>
+              <p>Professional office wear, executive suits, and branded corporate attire for businesses across Pakistan.</p>
+            </Link>
+            <Link href="/uniforms/industrial-workwear" className="industry-card">
+              <div className="industry-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <path d="M12 18v-6" />
+                  <path d="M9 15h6" />
+                </svg>
+              </div>
+              <h3>Industrial Workwear</h3>
+              <p>Durable safety uniforms, hi-vis vests, and flame-resistant workwear for factories and construction sites.</p>
+            </Link>
+            <Link href="/uniforms/driver-uniforms" className="industry-card">
+              <div className="industry-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="1" y="3" width="15" height="13" rx="2" ry="2" />
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+              </div>
+              <h3>Driver Uniforms</h3>
+              <p>Professional chauffeur and fleet driver uniforms for petroleum companies and logistics businesses in Pakistan.</p>
+            </Link>
+            <Link href="/uniforms/school-uniforms" className="industry-card">
+              <div className="industry-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+              </div>
+              <h3>School Uniforms</h3>
+              <p>Durable, comfortable school uniforms in bulk quantities for educational institutions across Lahore and Pakistan.</p>
+            </Link>
+            <Link href="/uniforms/hotel-restaurant-uniforms" className="industry-card">
+              <div className="industry-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                  <line x1="6" y1="1" x2="6" y2="4" />
+                  <line x1="10" y1="1" x2="10" y2="4" />
+                  <line x1="14" y1="1" x2="14" y2="4" />
+                </svg>
+              </div>
+              <h3>Hotel &amp; Restaurant</h3>
+              <p>Chef coats, waiter uniforms, housekeeping attire, and front-desk uniforms for the hospitality industry.</p>
+            </Link>
+            <Link href="/uniforms/staff-uniforms" className="industry-card">
+              <div className="industry-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3>Staff Uniforms</h3>
+              <p>General-purpose staff uniforms for retail, healthcare, security, and service industry employees.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="faq-section">
+        <div className="faq-container">
+          <div className="section-header">
+            <div className="section-label">Frequently Asked Questions</div>
+            <h2 className="section-title">Common Questions About Our Uniform Manufacturing</h2>
+          </div>
+          <div className="faq-grid">
+            <div className="faq-item">
+              <h3>What types of uniforms does KBwear manufacture?</h3>
+              <p>KBwear manufactures a wide range of uniforms including corporate office wear, industrial workwear, driver uniforms, school uniforms, hotel and restaurant attire, and specialized petroleum industry uniforms. We serve companies like TOTAL PARCO, ZIC Petroleum, and FLOW Petroleum with custom-designed uniforms tailored to their brand standards.</p>
+            </div>
+            <div className="faq-item">
+              <h3>What is the minimum order quantity for custom uniforms?</h3>
+              <p>We handle orders from as few as 50 units to large-scale enterprise orders of 10,000+ uniforms. Our flexible production capacity in Lahore allows us to accommodate businesses of all sizes across Pakistan, from startups to large corporations.</p>
+            </div>
+            <div className="faq-item">
+              <h3>How long does it take to manufacture custom uniforms?</h3>
+              <p>Standard orders typically take 2-4 weeks from design approval to delivery. Timelines vary based on order complexity, quantity, and customization requirements. We provide exact production schedules after initial consultation and design finalization.</p>
+            </div>
+            <div className="faq-item">
+              <h3>Does KBwear deliver uniforms across Pakistan?</h3>
+              <p>Yes, KBwear provides nationwide delivery across all major cities in Pakistan including Karachi, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, and Quetta. We use reliable logistics partners with real-time tracking for all shipments.</p>
+            </div>
+            <div className="faq-item">
+              <h3>How can I get a free quote for custom uniforms?</h3>
+              <p>You can request a free quote by visiting our contact page, emailing info@kb-wear.com.</p>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Capabilities - KBwear Custom Uniform Manufacturing Services Pakistan",
+  title: "Custom Uniform Services | Design, Production & Delivery | KBwear",
   description: "KBwear's comprehensive uniform manufacturing capabilities: premium fabric sourcing, custom design services, advanced manufacturing, scalable production, ISO-quality assurance, and nationwide logistics in Pakistan.",
   keywords: "KBwear capabilities, KB wear services, uniform manufacturing services, custom uniform design, bulk uniform production, quality assurance uniforms, fabric sourcing Pakistan, corporate uniform services, industrial workwear manufacturer",
   openGraph: {
@@ -104,7 +104,7 @@ export default function Capabilities() {
           <div className="section-header">
             <RevealWrapper>
               <div className="section-label">Complete Manufacturing Solutions</div>
-              <h2 className="section-title">Our Core Capabilities as a Uniform Manufacturer in Pakistan</h2>
+              <h1 className="section-title">Our Core Capabilities as a Uniform Manufacturer in Pakistan</h1>
               <p className="section-description">
                 Comprehensive services covering every aspect of custom uniform production from concept to delivery for corporate and industrial needs.
               </p>

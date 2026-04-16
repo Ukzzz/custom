@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Clients - KBwear | Trusted by TOTAL PARCO & ZIC Petroleum Pakistan",
+  title: "Our Clients | Trusted by TOTAL PARCO & ZIC Petroleum | KBwear",
   description: "KBwear serves Pakistan's leading corporations including TOTAL PARCO and ZIC Petroleum. Over 100,000+ custom uniforms delivered with 100% quality assurance. Trusted uniform manufacturer.",
   keywords: "KBwear clients, KB wear customers, TOTAL PARCO uniforms, ZIC Petroleum workwear, corporate uniform clients Pakistan, industrial uniform clients, oil company uniforms, petroleum industry workwear, trusted uniform manufacturer, 100000 uniforms delivered",
   openGraph: {
@@ -53,7 +53,7 @@ export default function Clients() {
               <div style={{ display: "block", marginBottom: "20px" }}>
                 <div className="section-label" style={{ color: "var(--secondary)", margin: 0 }}>Our Trusted Partners</div>
               </div>
-              <h2 className="section-title" style={{ color: "white", display: "inline-block" }}>Prestigious Clients</h2>
+              <h1 className="section-title" style={{ color: "white", display: "inline-block" }}>Prestigious Clients Who Trust KBwear</h1>
               <p className="section-description" style={{ color: "rgba(255,255,255,0.8)" }}>
                 Delivering excellence in uniform manufacturing to Pakistan's leading corporations. We take pride in our long-standing relationships with industry giants.
               </p>

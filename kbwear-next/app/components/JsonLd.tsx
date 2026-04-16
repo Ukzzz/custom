@@ -47,7 +47,7 @@ export function OrganizationJsonLd() {
 export function LocalBusinessJsonLd() {
   const data = {
     "@context": "https://schema.org",
-    "@type": "ClothingStore",
+    "@type": ["Manufacturer", "LocalBusiness"],
     "@id": "https://www.kb-wear.com/#localbusiness",
     name: "KBwear - Uniform Manufacturer Pakistan",
     image: "https://www.kb-wear.com/assets/logo.png",
@@ -56,9 +56,16 @@ export function LocalBusinessJsonLd() {
     email: "info@kb-wear.com",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Quaid-e-Azam Industrial Estate",
       addressLocality: "Lahore",
       addressRegion: "Punjab",
+      postalCode: "54000",
       addressCountry: "PK",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 31.5204,
+      longitude: 74.3587,
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",

@@ -66,6 +66,7 @@ export default function Header() {
     { href: "/clients", label: "Clients" },
     { href: "/process", label: "Process" },
     { href: "/samples", label: "Samples" },
+    { href: "/blog", label: "Blog" },
   ];
 
   const isActive = (href: string) => {

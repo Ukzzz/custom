@@ -18,16 +18,19 @@ export default function Footer() {
           <div className="footer-section">
             <h5>Company</h5>
             <Link href="/facility">Our Facility</Link>
+            <Link href="/uniform-manufacturer-lahore">Lahore Factory</Link>
             <Link href="/capabilities">Capabilities</Link>
             <Link href="/clients">Clients</Link>
             <Link href="/process">Process</Link>
           </div>
           <div className="footer-section">
             <h5>Services</h5>
-            <Link href="/capabilities">Custom Design</Link>
-            <Link href="/process">Bulk Production</Link>
-            <Link href="/facility">Quality Control</Link>
-            <Link href="/contact">Logistics &amp; Delivery</Link>
+            <Link href="/uniforms/corporate-uniforms">Corporate Uniforms</Link>
+            <Link href="/uniforms/industrial-workwear">Industrial Workwear</Link>
+            <Link href="/uniforms/driver-uniforms">Driver Uniforms</Link>
+            <Link href="/uniforms/school-uniforms">School Uniforms</Link>
+            <Link href="/uniforms/hotel-restaurant-uniforms">Hotel &amp; Restaurant</Link>
+            <Link href="/uniforms/staff-uniforms">Staff Uniforms</Link>
           </div>
           <div className="footer-section">
             <h5>Connect With Us</h5>

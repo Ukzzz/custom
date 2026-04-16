@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Uniform Samples Gallery - KBwear | 50+ Custom Corporate & Industrial Uniforms Pakistan",
+  title: "50+ Uniform Samples | Corporate & Industrial Portfolio | KBwear",
   description: "Browse KBwear's extensive uniform samples gallery with 50+ designs. Professional corporate uniforms, industrial workwear, safety uniforms, and custom-designed uniforms made in Pakistan. View our portfolio now!",
   keywords: "KBwear samples, KB wear gallery, uniform samples Pakistan, corporate uniform designs, industrial workwear gallery, custom uniform portfolio, uniform pictures, workwear samples, professional uniform examples, Lahore uniform samples",
   openGraph: {
@@ -32,7 +32,7 @@ export default function Samples() {
           <div className="section-header">
             <RevealWrapper>
               <div className="section-label">Our Uniform Samples</div>
-              <h2 className="section-title">Uniform Sample Gallery</h2>
+              <h1 className="section-title">Uniform Sample Gallery</h1>
               <p className="section-description">
                 Explore our portfolio of professionally designed and manufactured uniforms. Each sample represents our commitment to quality and attention to detail.
               </p>

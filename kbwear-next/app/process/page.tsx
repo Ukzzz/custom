@@ -4,7 +4,7 @@ import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Uniform Manufacturing Process - KBwear Step-by-Step Production Pakistan",
+  title: "Uniform Manufacturing Process | Step-by-Step Production | KBwear",
   description: "Discover KBwear's uniform manufacturing process: premium material sourcing, custom design & pattern, precision cutting, expert stitching, quality control, and professional packaging with nationwide delivery in Pakistan.",
   keywords: "KBwear process, KB wear manufacturing, uniform production process, garment manufacturing steps, fabric cutting, uniform stitching, quality control uniforms, uniform packaging, Lahore uniform production, how uniforms are made",
   openGraph: {
@@ -64,7 +64,7 @@ export default function Process() {
           <div className="section-header">
             <RevealWrapper>
               <div className="section-label">Our Manufacturing Process</div>
-              <h2 className="section-title">From Raw Material to Perfection in Uniform Manufacturing</h2>
+              <h1 className="section-title">From Raw Material to Perfection in Uniform Manufacturing</h1>
               <p className="section-description">
                 A systematic approach ensuring excellence at every stage of custom uniform production in Pakistan.
               </p>

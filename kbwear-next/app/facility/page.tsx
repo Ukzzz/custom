@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Facility - KBwear Uniform Manufacturing Factory in Pakistan",
+  title: "Uniform Factory Tour | KBwear Manufacturing Facility Lahore Pakistan",
   description: "Explore KBwear's state-of-the-art uniform manufacturing facility in Lahore, Pakistan. Modern raw material storage, precision cutting, advanced stitching, quality control, and efficient distribution.",
   keywords: "KBwear facility, KB wear factory, uniform factory Pakistan, garment factory Lahore, uniform manufacturing plant, stitching facility Pakistan, industrial uniform factory, cutting department, quality control uniforms",
   openGraph: {
@@ -71,7 +71,7 @@ export default function Facility() {
           <div className="section-header">
             <RevealWrapper>
               <div className="section-label">State-of-the-Art Infrastructure</div>
-              <h2 className="section-title">Our Uniform Manufacturing Facility in Pakistan</h2>
+              <h1 className="section-title">Our Uniform Manufacturing Facility in Lahore, Pakistan</h1>
               <p className="section-description">
                 World-class uniform manufacturing capabilities equipped with cutting-edge technology and operated by highly skilled professionals for custom uniforms and industrial workwear.
               </p>
