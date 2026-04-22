@@ -56,7 +56,7 @@ export function LocalBusinessJsonLd() {
     email: "info@kb-wear.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Quaid-e-Azam Industrial Estate",
+      streetAddress: "Dallu Khurd Rd, Gajjumata",
       addressLocality: "Lahore",
       addressRegion: "Punjab",
       postalCode: "54000",

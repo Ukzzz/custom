@@ -42,7 +42,7 @@ export default function BlogPost() {
             When your uniform manufacturer is in Lahore, you eliminate weeks of shipping delays. Importing uniforms from China typically takes 30-45 days including production and shipping. Even ordering from another city in Pakistan adds 3-7 days in transit.
           </p>
           <p>
-            With a local Lahore manufacturer like KBwear, standard orders are completed in just 2-4 weeks from design approval to doorstep delivery. Need rush orders? Our 24/7 production capacity allows us to expedite urgent orders for clients in Lahore and surrounding areas. Some Lahore-based clients even pick up orders directly from our <Link href="/facility" style={{ color: "var(--secondary)", fontWeight: 600 }}>factory in Quaid-e-Azam Industrial Estate</Link>.
+            With a local Lahore manufacturer like KBwear, standard orders are completed in just 2-4 weeks from design approval to doorstep delivery. Need rush orders? Our 24/7 production capacity allows us to expedite urgent orders for clients in Lahore and surrounding areas. Some Lahore-based clients even pick up orders directly from our <Link href="/facility" style={{ color: "var(--secondary)", fontWeight: 600 }}>factory at Dallu Khurd Rd, Gajjumata, Lahore</Link>.
           </p>
 
           <h2>2. Lower Costs with No Hidden Fees</h2>
@@ -82,7 +82,7 @@ export default function BlogPost() {
             KBwear has earned the trust of Pakistan&apos;s top corporations including TOTAL PARCO, ZIC Petroleum, and FLOW Petroleum. Our Lahore factory offers:
           </p>
           <ul>
-            <li>State-of-the-art manufacturing facility in Quaid-e-Azam Industrial Estate</li>
+            <li>State-of-the-art manufacturing facility at Dallu Khurd Rd, Gajjumata, Lahore</li>
             <li>Over 100,000 uniforms delivered with zero-defect quality standards</li>
             <li>Custom design services with in-house pattern makers and embroidery</li>
             <li>Flexible capacity handling 50 to 10,000+ unit orders</li>
