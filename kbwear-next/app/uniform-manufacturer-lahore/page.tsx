@@ -40,7 +40,7 @@ export default function UniformManufacturerLahore() {
             <ul>
               <li>Direct access to Punjab&apos;s finest fabric mills and suppliers — reducing costs and lead times</li>
               <li>A highly skilled workforce trained in precision garment manufacturing</li>
-              <li>Strategic location for nationwide distribution — central to Karachi, Islamabad, and Peshawar</li>
+              <li>Strategic location for nationwide distribution — ensuring fast and efficient delivery across Pakistan</li>
               <li>State-of-the-art factory with CAD-integrated cutting, industrial stitching, and quality control</li>
               <li>Lower production costs compared to Karachi, passed directly to our clients</li>
             </ul>
