@@ -2,6 +2,8 @@ import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
+import MapSection from "../components/MapSection";
+
 
 export const metadata: Metadata = {
   title: "Uniform Manufacturer in Lahore | #1 Factory in Punjab | KBwear",
@@ -84,7 +86,10 @@ export default function UniformManufacturerLahore() {
             </ul>
           </div>
 
+          <MapSection />
+
           <div className="service-cta-box">
+
             <h2>Get a Free Quote from Lahore&apos;s #1 Uniform Manufacturer</h2>
             <p>Contact KBwear today and receive a detailed quotation within 24 hours. Factory visits welcome.</p>
             <Link href="/contact" className="btn btn-primary">

@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Custom Uniform Services | Design, Production & Delivery | KBwear",
-  description: "KBwear's comprehensive uniform manufacturing capabilities: premium fabric sourcing, custom design services, advanced manufacturing, scalable production, ISO-quality assurance, and nationwide logistics in Pakistan.",
+  description: "KBwear's comprehensive uniform manufacturing capabilities: premium fabric sourcing, advanced manufacturing, scalable production, ISO-quality assurance, and nationwide logistics in Pakistan.",
   keywords: "KBwear capabilities, KB wear services, uniform manufacturing services, custom uniform design, bulk uniform production, quality assurance uniforms, fabric sourcing Pakistan, corporate uniform services, industrial workwear manufacturer",
   openGraph: {
     title: "Our Capabilities - KBwear Custom Uniform Manufacturing Services",
@@ -41,19 +41,7 @@ const capabilities = [
     title: "Advanced Manufacturing",
     description: "State-of-the-art machinery combined with master craftsmanship for superior quality and efficiency in industrial uniforms."
   },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="13.5" cy="6.5" r="2.5" />
-        <circle cx="17.5" cy="10.5" r="2.5" />
-        <circle cx="8.5" cy="7.5" r="2.5" />
-        <circle cx="6.5" cy="12.5" r="2.5" />
-        <path d="M12 22c-4.97 0-9-2.24-9-5v-.09c1.52.87 3.02 1.44 4.68 1.76a15.93 15.93 0 0 0 8.64 0c1.66-.32 3.16-.89 4.68-1.76V17c0 2.76-4.03 5-9 5z" />
-      </svg>
-    ),
-    title: "Custom Design Services",
-    description: "Dedicated design team creating custom uniforms that perfectly represent your brand identity and values in Pakistan."
-  },
+
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

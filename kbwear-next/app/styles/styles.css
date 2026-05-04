@@ -3277,3 +3277,109 @@ html.dark .blog-post-container p,
 html.dark .blog-post-container ul li {
     color: #cbd5e1;
 }
+
+/* Map Section Premium Styling */
+.map-container-wrapper {
+    position: relative;
+    height: 550px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    border: 8px solid var(--white);
+    transition: all 0.4s ease;
+}
+
+.map-overlay-card {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(16, 41, 66, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 380px;
+    z-index: 10;
+}
+
+.map-overlay-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.map-overlay-card p {
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Dark Mode Overrides */
+html.dark .map-container-wrapper {
+    border-color: #1e293b;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .map-overlay-card {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .map-overlay-card h3 {
+    color: var(--white);
+}
+
+html.dark .map-overlay-card p {
+    color: #94a3b8;
+}
+
+html.dark .map-section {
+    background: #0f172a !important;
+}
+
+html.dark .section-description {
+    color: #94a3b8;
+}
+
+/* Home Page Stats Visibility Fix */
+.stat-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(16, 41, 66, 0.08) !important;
+}
+
+.stat-number {
+    color: #102942 !important;
+}
+
+.stat-label {
+    color: #64748b !important;
+}
+
+.stat-icon {
+    color: #102942 !important;
+    opacity: 1 !important;
+}
+
+/* Maintain Dark Mode Compatibility */
+html.dark .stat-card {
+    background: #1e293b !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .stat-number {
+    color: #e2e8f0 !important;
+}
+
+html.dark .stat-label {
+    color: #94a3b8 !important;
+}
+
+html.dark .stat-icon {
+    color: #6ec87a !important;
+}
+
+

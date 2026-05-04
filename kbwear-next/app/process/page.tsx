@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Uniform Manufacturing Process | Step-by-Step Production | KBwear",
-  description: "Discover KBwear's uniform manufacturing process: premium material sourcing, custom design & pattern, precision cutting, expert stitching, quality control, and professional packaging with nationwide delivery in Pakistan.",
+  description: "Discover KBwear's uniform manufacturing process: premium material sourcing, precision cutting, expert stitching, quality control, and professional packaging with nationwide delivery in Pakistan.",
   keywords: "KBwear process, KB wear manufacturing, uniform production process, garment manufacturing steps, fabric cutting, uniform stitching, quality control uniforms, uniform packaging, Lahore uniform production, how uniforms are made",
   openGraph: {
     title: "Uniform Manufacturing Process - KBwear Pakistan",
@@ -26,26 +26,21 @@ const processes = [
   },
   {
     number: "2",
-    title: "Design & Pattern",
-    description: "Custom design development and precision pattern creation for corporate uniforms."
-  },
-  {
-    number: "3",
     title: "Cutting",
     description: "CAD-controlled cutting for perfect accuracy and minimal waste in industrial workwear."
   },
   {
-    number: "4",
+    number: "3",
     title: "Stitching",
     description: "Expert assembly with industrial-grade machinery for durable stitching services Pakistan."
   },
   {
-    number: "5",
+    number: "4",
     title: "Quality Control",
     description: "Rigorous multi-point inspection and testing protocols for custom uniforms."
   },
   {
-    number: "6",
+    number: "5",
     title: "Packaging & Delivery",
     description: "Professional packaging with on-time nationwide delivery for uniform manufacturer Pakistan."
   }
