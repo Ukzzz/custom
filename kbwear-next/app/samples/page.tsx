@@ -5,12 +5,12 @@ import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "50+ Uniform Samples | Corporate & Industrial Portfolio | KBwear",
-  description: "Browse KBwear's extensive uniform samples gallery with 50+ designs. Professional corporate uniforms, industrial workwear, safety uniforms, and custom-designed uniforms made in Pakistan. View our portfolio now!",
+  title: "60+ Uniform Samples | Corporate & Industrial Portfolio | KBwear",
+  description: "Browse KBwear's extensive uniform samples gallery with 60+ designs. Professional corporate uniforms, industrial workwear, safety uniforms, and custom-designed uniforms made in Pakistan. View our portfolio now!",
   keywords: "KBwear samples, KB wear gallery, uniform samples Pakistan, corporate uniform designs, industrial workwear gallery, custom uniform portfolio, uniform pictures, workwear samples, professional uniform examples, Lahore uniform samples",
   openGraph: {
-    title: "Uniform Samples Gallery - KBwear | 50+ Custom Uniforms",
-    description: "Browse 50+ professional uniform samples from KBwear, Pakistan's leading uniform manufacturer.",
+    title: "Uniform Samples Gallery - KBwear | 60+ Custom Uniforms",
+    description: "Browse 60+ professional uniform samples from KBwear, Pakistan's leading uniform manufacturer.",
     url: "https://www.kb-wear.com/samples",
     images: [{ url: "https://www.kb-wear.com/assets/sample-1.png" }],
   },
