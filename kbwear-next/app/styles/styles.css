@@ -919,12 +919,70 @@ section {
 
 /* Clients Section */
 .clients-section {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+    background: linear-gradient(135deg, #102942 0%, #0f172a 100%);
     color: white;
     position: relative;
     overflow: hidden;
     padding: 140px 60px;
+    transition: all 0.4s ease;
 }
+
+html.dark .clients-section {
+    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+}
+
+/* Light Mode Overrides for Clients Section */
+html:not(.dark) .clients-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    color: var(--primary);
+}
+
+html:not(.dark) .clients-section .section-title {
+    color: var(--primary) !important;
+}
+
+html:not(.dark) .clients-section .section-description {
+    color: var(--text-light) !important;
+}
+
+html:not(.dark) .client-logo-card {
+    background: white;
+    border-color: rgba(16, 41, 66, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+html:not(.dark) .client-logo-wrapper {
+    background: rgba(16, 41, 66, 0.02);
+    border-color: rgba(16, 41, 66, 0.05);
+}
+
+html:not(.dark) .client-logo-card h3 {
+    color: var(--primary);
+}
+
+html:not(.dark) .client-logo-card p {
+    color: var(--text-light);
+}
+
+html:not(.dark) .achievements-banner {
+    background: white;
+    border-color: rgba(16, 41, 66, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+html:not(.dark) .achievement-number {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: none;
+}
+
+html:not(.dark) .achievement-label {
+    color: var(--text-light);
+}
+
+
 
 .clients-section::before {
     content: '';
@@ -983,42 +1041,43 @@ section {
     font-weight: 800;
     margin-bottom: 20px;
     letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.7) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
 }
 
+
 .client-logo-wrapper {
-    height: 120px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    padding: 10px;
+    padding: 20px;
     position: relative;
-    z-index: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Subtle glow behind the logo instead of a harsh white box */
-.client-logo-wrapper::before {
-    content: '';
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
-    z-index: -1;
-    border-radius: 50%;
+.client-logo-card:hover .client-logo-wrapper {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--secondary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
-
 
 .client-logo-img {
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 120px;
+    max-width: 85%;
     object-fit: contain;
-    /* Adding a subtle glow to the logos themselves to help them stand out on the dark background */
-    filter: drop-shadow(0 0 15px rgba(255,255,255,0.2)) brightness(1.2);
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+    transition: transform 0.4s ease;
 }
+
+.client-logo-card:hover .client-logo-img {
+    transform: scale(1.1);
+}
+
 
 .client-logo-card p {
     font-size: 16px;
